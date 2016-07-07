@@ -1,0 +1,65 @@
+*{
+  margin:0px;
+  padding:0px;
+  box-sizing: border-box;
+}
+
+.home-wallpaper{
+  background-image: url(../image/finanzas.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position:relative;
+  opacity:0.6;
+  height: 100vh;
+  width: 100%;
+  -webkit-filter: blur(3px);
+}
+
+a.home-btn {
+    margin:40px 5px;
+    color: #333;
+    width: 150px;
+    font-size: 18px;
+    background-color: transparent;
+    border-color: #333;
+}
+
+a.home-btn:hover,a.home-btn:focus{
+    background-color: #333;
+    border-color: #333;
+    color:#fff;
+}
+
+.home-texto{
+  position: absolute;
+  top:25vh;
+}
+
+.home-texto h1{
+  font-size:60px;
+
+}
+
+.home-pie-pagina{
+  padding:20px 0px;
+  background-color:#333;
+  color:#f2f2f2;
+}
+
+@media screen and (max-width:600px){
+  .home-texto h1{
+    font-size:50px;
+  }
+
+  .home-texto{
+    top:20%;
+  }
+
+  a.home-btn{
+    margin:5px;
+  }
+}
