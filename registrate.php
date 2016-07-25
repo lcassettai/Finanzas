@@ -56,11 +56,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
           ':email' => $email
         ));
 
-         $enviado = true;
-         header('Location:login.php');
+         $enviado = true;         
       }
   }
 }
 
- require 'registrate.view.php';;
+ require 'views/registrate.view.php';;
 ?>

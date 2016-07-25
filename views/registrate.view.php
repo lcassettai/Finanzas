@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>Login</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/home.css">
   </head>
   <body>
@@ -64,9 +64,28 @@
       </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src='http://localhost:35729/livereload.js'></script>
+
+    <!-- modal oara avisar que se creo el usuario  -->
+    <div class="modal fade" id="modal-aviso" role="dialog">
+      <div class="modal-dialog">
+     <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-body  text-center modal-aviso-body">
+         <div class="circulo-icono">
+             <span class='glyphicon glyphicon-ok'></span>
+             </div>
+             <h3><strong>Excelentes Noticias!</strong></h3>
+             <br />
+             <h4>Se creo tu usuario correctamente!</h4>
+             <br />
+             <a type="button" href='login.php' class="btn btn-success modal-aviso">Continuar</a>
+           </div>
+         </div>
+         </div>
+       </div>
+
+    <script src="javascript/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript">
       $('document').ready(function(){
         $('#mostrar').change(function(){
@@ -78,6 +97,10 @@
           $('#pass2').attr('type','password');
         }
         });
+
+        <?php if($enviado == true):?>
+          $("#modal-aviso").modal();
+        <?php endif ?>
       });
     </script>
     </body>

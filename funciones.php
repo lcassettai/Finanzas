@@ -16,10 +16,84 @@
     return $entrada;
   }
 
-  function verificarSesion(){   
-
+  function verificarSesion(){
     if(!isset($_SESSION['usuario'])){
       header('Location:'.RUTA.'/login.php');
     }
   }
+
+  function obtener_monto_actual($conexion,$id){
+    $sql = 'SELECT SUM(monto) as monto FROM ingresos WHERE id_usuario = :id' ;
+    $consulta = $conexion->prepare($sql);
+    $consulta->execute(array(
+      ':id'  => $id
+    ));
+    $resultado = $consulta->fetch();
+    $montoActual = 0;
+
+    if($resultado == true){
+      $montoActual = $resultado['monto'];
+      if(empty($montoActual)){
+        $montoActual = 0;
+      }
+    }
+
+    $sql = 'SELECT SUM(monto) as monto FROM gastos WHERE id_usuario = :id' ;
+    $consulta = $conexion->prepare($sql);
+    $consulta->execute(array(
+      ':id'  => $id
+    ));
+    $resultado = $consulta->fetch();
+
+    if($resultado == true){
+      $montoActual -= $resultado['monto'];
+    }
+
+    return $montoActual;
+  }
+
+  function obtener_tipo_ingresos_gastos($conexion,$ingreso_gasto){
+    $consulta = $conexion->prepare('SELECT * FROM tipo_'.$ingreso_gasto);
+    $consulta->execute();
+    $resultado = $consulta->fetchAll();
+    return $resultado;
+  }
+
+  function fecha($fecha){
+    $timestamp = strtotime($fecha); //Convierte una cadena de texto en tiempo
+
+    $dia = date('d',$timestamp);
+    $mes = date('m',$timestamp)-1;
+    $year = date('Y',$timestamp);
+
+    $fecha = "$dia/" . $mes . "/$year";
+
+    return $fecha;
+  }
+
+  function fecha_con_nombres($fecha){
+    $timestamp = strtotime($fecha); //Convierte una cadena de texto en tiempo
+    $meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+
+    $dia = date('d',$timestamp);
+    $mes = date('m',$timestamp)-1;
+    $year = date('Y',$timestamp);
+
+    $fecha = "$dia de " . $meses["$mes"] . " del $year";
+
+    return $fecha;
+  }
+
+  function hora($fecha){
+    $timestamp = strtotime($fecha); //Convierte una cadena de texto en tiempo
+
+    $hora = date('G',$timestamp);
+    $minutos = date('i',$timestamp);
+
+    $horario = "$hora:$minutos Hs";
+
+    return $horario;
+  }
+
+
 ?>

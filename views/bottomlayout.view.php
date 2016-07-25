@@ -1,5 +1,6 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<script src='http://localhost:35729/livereload.js'></script>
+<script src="javascript/jquery.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="http://localhost:35729/livereload.js" charset="utf-8"></script>
+
 </body>
 </html>

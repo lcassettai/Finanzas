@@ -6,4 +6,5 @@ define('RUTA','http://localhost/Finanzas');
     'usuario' => 'root',
     'pass' => ''
 );
+
 ?>
