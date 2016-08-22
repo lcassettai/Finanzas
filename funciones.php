@@ -1,7 +1,7 @@
 <?php
   function conectar($bd_conexion){
     try {
-      $conexion = new PDO('mysql:host=localhost;dbname='.$bd_conexion['bd'],$bd_conexion['usuario'],$bd_conexion['pass']);
+      $conexion = new PDO('mysql:host=127.0.0.1;dbname='.$bd_conexion['bd'],$bd_conexion['usuario'],$bd_conexion['pass']);
       return $conexion;
     } catch (Exception $e) {
       return false;
@@ -63,7 +63,7 @@
     $timestamp = strtotime($fecha); //Convierte una cadena de texto en tiempo
 
     $dia = date('d',$timestamp);
-    $mes = date('m',$timestamp)-1;
+    $mes = date('m',$timestamp);
     $year = date('Y',$timestamp);
 
     $fecha = "$dia/" . $mes . "/$year";
@@ -79,6 +79,7 @@
     $mes = date('m',$timestamp)-1;
     $year = date('Y',$timestamp);
 
+
     $fecha = "$dia de " . $meses["$mes"] . " del $year";
 
     return $fecha;
@@ -93,6 +94,19 @@
     $horario = "$hora:$minutos Hs";
 
     return $horario;
+  }
+
+  function validarFecha($fecha){
+    $fec = explode("/",$fecha);
+    if(isset($fec[0]) && isset($fec[1]) && isset($fec[2])){
+      if(is_numeric($fec[0]) && is_numeric($fec[1]) && is_numeric($fec[2])){
+        return checkdate($fec[1],$fec[0],$fec[2]);  #Mes Dia Ano
+      }else{
+        return false;
+      }
+    }else{
+      return false;
+    }
   }
 
 

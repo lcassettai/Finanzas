@@ -35,8 +35,11 @@ a.home-btn:hover,a.home-btn:focus{
 }
 
 .home-texto{
+  width:50%;
+  margin:0px auto;
   position: absolute;
   top:25vh;
+  left:25vw;
 }
 
 .home-texto h1{
@@ -56,10 +59,14 @@ a.home-btn:hover,a.home-btn:focus{
   }
 
   .home-texto{
-    top:20%;
+    top:15%;
+    width: 90%;
+    left: 10px;   
   }
 
   a.home-btn{
     margin:5px;
+    display:inline-block;
   }
+
 }

@@ -60,6 +60,19 @@
       $comentario  = '';
     }
 
+    if(!empty($_POST['fecha'])){
+      $fecha = $_POST['fecha'];
+      if(validarFecha($fecha)){
+        $myDateTime = DateTime::createFromFormat('d/m/Y', $fecha);
+        $fechaFormat = $myDateTime->format('Y-m-d');
+      }else{
+        $errores = 'La fecha introducida es incorrecta';
+      }
+
+    }else{
+      $errores = 'Debe ingresar una fecha';
+    }
+
     $categoria = $_POST['categoria'];
 
     if($errores == ''){
@@ -83,10 +96,11 @@
        ':comentario' => $comentario,
        ':usuario' => $usuario,
        ':codigo' => $codigo,
-       ':fecha' => $fecha
+       ':fecha' => $fechaFormat
      ));
 
      $enviado = true;
+
     }
   }
 

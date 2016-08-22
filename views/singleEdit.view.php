@@ -1,4 +1,5 @@
 <?php require 'headlayout.view.php'; ?>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
 <div class="container">
   <div class="row">
     <div class="col-sm-5 col-sm-offset-4">
@@ -15,6 +16,10 @@
           <div class="form-group">
             <label for="monto">Ingrese un monto:</label>
             <input type="text" name="monto" placeholder="monto" class='form-control' id='monto' value='<?php echo $montoAnterior; ?>' >
+          </div>
+          <div class="form-group">
+            <label for="fecha">Ingrese una fecha:</label>
+            <input type="text" id="datepicker" name='fecha' class='form-control' value='<?php echo fecha($fecha)  ;?>'>
           </div>
           <div class="form-group">
             <label for="opciones">Categoria:</label>
@@ -88,4 +93,10 @@
       $("#modal-aviso").modal();
     <?php endif ?>
   });
+</script>
+<script src="javascript/jqueryUI.js"></script>
+<script>
+$( function() {
+  $( "#datepicker" ).datepicker();
+} );
 </script>
