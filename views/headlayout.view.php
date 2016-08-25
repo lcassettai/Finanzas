@@ -32,10 +32,11 @@
               <li><a href="nuevoingresogasto.php?tipo=gastos">Gasto</a></li>
             </ul>
           </li>
-          <li><a href="historial.php">Editar<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-pencil"></span></a></li>
-          <li ><a href="historial.php">Historial<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-calendar"></span></a></li>
-          <li ><a href="#">Estadisticas<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-stats"></span></a></li>
-          <li ><a href="#">Ayuda<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-question-sign"></span></a></li>
+          <!--<li><a href="historial.php">Editar<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-pencil"></span></a></li>-->
+          <li ><a href="historial.php">Historial / Edicion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-calendar"></span></a></li>
+          <li ><a href="construccion.php">Estadisticas<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-stats"></span></a></li>
+          <li ><a href="construccion.php">Ayuda<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-question-sign"></span></a></li>
+          <li ><a href="construccion.php">Configuracion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a></li>
           <li ><a href="logout.php">Log Out<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-log-out"></span></a></li>
         </ul>
       </div>
