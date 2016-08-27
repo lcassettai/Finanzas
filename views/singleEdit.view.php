@@ -1,5 +1,7 @@
 <?php require 'headlayout.view.php'; ?>
+
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+<div class="modal-loading"></div>
 <div class="container">
   <div class="row">
     <div class="col-sm-5 col-sm-offset-4">
@@ -88,15 +90,16 @@
 <?php require 'bottomlayout.view.php'; ?>
 
 <script type="text/javascript">
+  var loading = $('.modal-loading');
   $('document').ready(function(){
     <?php if($enviado == true):?>
       $("#modal-aviso").modal();
     <?php endif ?>
+
+    $( function() {
+      $( "#datepicker" ).datepicker();
+    });
+    $(loading).css('display','none');
   });
 </script>
 <script src="javascript/jqueryUI.js"></script>
-<script>
-$( function() {
-  $( "#datepicker" ).datepicker();
-} );
-</script>
