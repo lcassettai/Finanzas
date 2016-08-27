@@ -71,6 +71,11 @@
     return $fecha;
   }
 
+  function  number_to_month($mes){
+      $meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+      return $meses[$mes-1];
+  }
+
   function fecha_con_nombres($fecha){
     $timestamp = strtotime($fecha); //Convierte una cadena de texto en tiempo
     $meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
