@@ -46,8 +46,15 @@
       $comentario  = '';
     }
 
+    if(!empty($_POST['categoria'])){
+        $categoria = $_POST['categoria'];
+        if (!is_numeric($categoria)) {
+          $errores = 'La categoria no es correcta';
+        }
+    }else{
+      $errores = 'Debe seleccionar una categoria';
+    }
 
-    $categoria = $_POST['categoria'];
     $usuario = $_SESSION['id'];
 
     if($errores == ''){

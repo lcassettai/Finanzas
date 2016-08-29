@@ -1,3 +1,4 @@
+<!-- Esta pagina se utiliza para avisar a el usuario que aun esta en construccion -->
 <?php require 'views/headlayout.view.php';?>
 <div class="container">
   <div class="row">
@@ -6,5 +7,4 @@
       </div>
   </div>
 </div>
-
 <?php require 'views/bottomlayout.view.php';?>

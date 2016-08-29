@@ -5,7 +5,7 @@ Mi nombre es **Luciano** tengo 24 años, soy de Posadas Misiones Argentina y mi 
 #Sobre el proyecto
 
 Finanzas personales es un proyecto personal que surgió a partir de la idea de mantener el control de mis gastos diarios disponibles en todo momento. Anteriormente había utilizado otras herramientas como:  Excel, aplicaciones móviles, etc. Pero no encontraba en ellas el potencial de lo que yo las que yo quería hacer, así que pensé “porque no hacer una?” y así fui indagando más sobre el tema.
-Además de ser el primer sitio web que publico también es el primer sitio hecho con PHP anterior mente trabaje con otras tecnologías (.NET y JAVA) pero quería indagar en el tan popular PHP.
+Además de ser el primer sitio web que publico también es el primer sitio hecho con PHP anteriormente trabaje con otras tecnologías (.NET y JAVA) pero quería indagar en el tan popular PHP.
 
 #Funciones del sitio
 
@@ -15,5 +15,3 @@ Actualmente estoy agregando nuevas funciones a la plataforma,  por el momento po
 Si deseas comunicarte conmigo para sugerir cambios o alguna duda mi correo es **luciano.cassettai@gmail.com**
 
 Gracias por utilizar el sitio!  
-
-

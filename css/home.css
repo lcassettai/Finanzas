@@ -33,7 +33,7 @@ body,html{
         width: 200px;
         height: 100%;
         position: fixed;
-        z-index: 999;
+        z-index: 1002;
         margin-left: -160px;
         float: left;
         margin-bottom: 0px;
@@ -340,7 +340,7 @@ body,html{
 .modal-loading {
     display:    block;
     position:   fixed;
-    z-index:    1000;
+    z-index:    998;
     top:        0;
     left:       0;
     height:     100%;
@@ -362,4 +362,21 @@ body.loading {
    modal element will be visible */
 body.loading .modal {
     display: block;
+}
+
+/*-------------ERROR --------------------*/
+
+.error-arrow{
+  font-size:30px;
+  display: block;
+  margin-top: 30px;
+}
+
+.error-arrow> a{
+  text-decoration: none;
+}
+
+.panel-error{
+  display: block !important;
+  float: none;
 }

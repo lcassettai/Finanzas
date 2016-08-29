@@ -92,7 +92,10 @@
 <script type="text/javascript">
   var loading = $('.modal-loading');
   $('document').ready(function(){
+    //Si todos los campos son correctos mostrar modal avisando al usuario
     <?php if($enviado == true):?>
+      //Ocultamos el gif de carga
+      $(loading).css('display','none');
       $("#modal-aviso").modal();
     <?php endif ?>
 
@@ -100,6 +103,11 @@
       $( "#datepicker" ).datepicker();
     });
     $(loading).css('display','none');
+    
+    //Al hacer click en submit mostrar el gif de carga
+    $("input[name='submit']").click(function(){
+      $(loading).css('display','block');
+    });
   });
 </script>
 <script src="javascript/jqueryUI.js"></script>

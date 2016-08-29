@@ -73,7 +73,14 @@
       $errores = 'Debe ingresar una fecha';
     }
 
-    $categoria = $_POST['categoria'];
+    if(!empty($_POST['categoria'])){
+        $categoria = $_POST['categoria'];
+        if (!is_numeric($categoria)) {
+          $errores = 'La categoria no es correcta';
+        }
+    }else{
+      $errores = 'Debe seleccionar una categoria';
+    }
 
     if($errores == ''){
       if ($tipo == 'ingresos') {

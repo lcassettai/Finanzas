@@ -2,14 +2,18 @@
   session_start();
   require 'admin/config.php';
   require 'funciones.php';
+  //Verificamos si inicio sesion
   verificarSesion();
 
+  //Intentamos conectarnos a la BD
   $conexion = conectar($bd_conexion);
 
+  //Si la conexion falla enviamos a la pagina de error
   if($conexion == false){
     header('Location:error.php');
   }
 
+  //Recibimos el codigo del movimiento que queremos eliminar y el tipo (ingreso o gasto)
   if(($_SERVER['REQUEST_METHOD'] == 'POST')){
     $codigo = $_POST['codigo'];
     $tipo = $_POST['tipo'];

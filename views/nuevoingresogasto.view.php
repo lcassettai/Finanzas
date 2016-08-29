@@ -1,4 +1,6 @@
 <?php require 'headlayout.view.php'; ?>
+<!-- Modal que mostrara gif de carga -->
+<div class="modal-loading"></div>
 <div class="container">
   <div class="row">
     <div class="col-sm-5 col-sm-offset-4">
@@ -10,6 +12,8 @@
           <div class="panel panel-gasto">
           <h1 class='text-center'>Nuevo Gasto</h1>
         <?php endif; ?>
+
+        <!-- Formulario -->
         <form class='form' action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']).'?tipo='.$nuevo_tipo; ?>" method="post">
           <input type="hidden" value="<?php echo $nuevo_tipo;?>" name='nuevo_tipo'>
           <div class="form-group">
@@ -36,6 +40,8 @@
             <label for="comentario">Comentario :</label>
             <textarea name="comentario" class='form-control' placeholder="Comentario" id='comentario' rows="6"></textarea>
           </div>
+
+          <!-- En caso de tener errores los muestra -->
           <?php if ($errores != ''): ?>
             <div class="alert alert-danger alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -47,7 +53,7 @@
             <?php if ($nuevo_tipo == 'ingresos'): ?>
                 <input type="submit" name="submit" value="Guardar" class='btn btn-success pull-right'>
             <?php else: ?>
-                <input type="submit" name="submit" value="Guardar" class='btn btn-danger pull-right'>
+                <input type="submit" name="submit" value="Guardar" class='btn btn-danger pull-right' >
             <?php endif; ?>
           </div>
         </form>
@@ -78,8 +84,18 @@
 <?php require 'bottomlayout.view.php'; ?>
 <script type="text/javascript">
   $('document').ready(function(){
+    //Si todos los campos son correctos mostrar modal avisando al usuario
     <?php if($enviado == true):?>
+      //Ocultamos el gif de carga
+      $(loading).css('display','none');
       $("#modal-aviso").modal();
     <?php endif ?>
+    var loading = $('.modal-loading');
+    $(loading).css('display','none');
+
+    //Al hacer click en submit mostrar el gif de carga
+    $("input[name='submit']").click(function(){
+      $(loading).css('display','block');
+    });
   });
 </script>
