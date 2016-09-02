@@ -7,10 +7,10 @@
         <!--Dependiendo de si es ingreso o gasto cambiamos el titulo-->
         <?php if ($nuevo_tipo == 'ingresos'): ?>
           <div class="panel panel-ingreso">
-          <h1 class='text-center'>Nuevo Ingreso</h1>
+          <h1 class='text-center gfont'>Nuevo Ingreso</h1>
         <?php else: ?>
           <div class="panel panel-gasto">
-          <h1 class='text-center'>Nuevo Gasto</h1>
+          <h1 class='text-center gfont'>Nuevo Gasto</h1>
         <?php endif; ?>
 
         <!-- Formulario -->

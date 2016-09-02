@@ -52,8 +52,8 @@ function drawChart() {
   var datosTipoGastos = new google.visualization.DataTable(jsonTipoGastos);
 
   // Instanciamos y dibujamos los graficos
-  var chart_ingresos = new google.visualization.LineChart(document.getElementById('chart_ingresos'));
-  var chart_gastos = new google.visualization.LineChart(document.getElementById('chart_gastos'));
+  var chart_ingresos = new google.visualization.AreaChart(document.getElementById('chart_ingresos'));
+  var chart_gastos = new google.visualization.AreaChart(document.getElementById('chart_gastos'));
   var chart_tipo_gasto = new google.visualization.PieChart(document.getElementById('chart_tipo_gasto'));
 
   chart_ingresos.draw(datosIngresos,opcionesIngresos);
@@ -69,7 +69,7 @@ function drawChart() {
 
 <!-- Contenido principal -->
 <div class="container">
-  <h1 class='text-center'>Estadisticas</h1>
+  <h1 class='text-center gfont'>Estadisticas</h1>
 
   <!-- Charts para mostrar los datos -->
   <div class="panel panel-estadisticas">

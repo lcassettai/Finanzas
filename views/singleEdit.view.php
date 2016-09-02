@@ -8,10 +8,10 @@
         <!--Dependiendo de si es ingreso o gasto cambiamos el titulo-->
         <?php if ($tipo == 'ingresos'): ?>
           <div class="panel panel-ingreso">
-          <h1 class='text-center'>Editar Ingreso</h1>
+          <h1 class='text-center gfont'>Editar Ingreso</h1>
         <?php else: ?>
           <div class="panel panel-gasto">
-          <h1 class='text-center'>Editar Gasto</h1>
+          <h1 class='text-center gfont'>Editar Gasto</h1>
         <?php endif; ?>
         <form class='form' action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']).'?tipo='.$tipo.'&codigo='.$codigo; ?>" method="post">
           <input type="hidden" name='codigo' value='<?php echo $codigo;?>'>
@@ -103,7 +103,7 @@
       $( "#datepicker" ).datepicker();
     });
     $(loading).css('display','none');
-    
+
     //Al hacer click en submit mostrar el gif de carga
     $("input[name='submit']").click(function(){
       $(loading).css('display','block');

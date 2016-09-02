@@ -12,7 +12,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-4 col-sm-offset-4 login panel panel-default">
-          <h1 class='text-center'>Iniciar Sesion</h1>
+          <h1 class='text-center gfont'>Iniciar Sesion</h1>
           <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
             <div class="form-group">
               <div class="input-group">

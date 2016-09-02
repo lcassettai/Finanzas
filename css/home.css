@@ -15,6 +15,10 @@ body,html{
     padding: 10px 10px 0 10px;
   }
 
+  .gfont{
+    font-family: 'Bree Serif', serif;
+  }
+
   .login{
     margin-top:5%;
     background: #337ab7;
@@ -379,4 +383,34 @@ body.loading .modal {
 .panel-error{
   display: block !important;
   float: none;
+}
+
+/*-------------CONFIGURACION --------------------*/
+
+.panel-config{
+  background: #fff;
+  margin-top:30px;
+  padding: 10px 10px 0 10px;
+  box-shadow: 0px 0px 1px 1px rgba(171, 171, 171, 0.81);
+}
+
+.config-info{
+  border-top: 4px solid #f44336;
+}
+
+.config-info-modificar{
+  border-top: 4px solid #4caf50;
+}
+
+.titulo-config{
+  font-weight: bold;
+  font-size:24px;
+}
+
+.info-usuario-visible{
+  display: block;
+}
+
+.info-usuario-invisible{
+  display: none;
 }

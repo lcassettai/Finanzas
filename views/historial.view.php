@@ -1,7 +1,7 @@
 <?php  require 'headlayout.view.php';?>
 
   <div class="container">
-    <h1 class='text-center'>Historial</h1>
+    <h1 class='text-center gfont'>Historial</h1>
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2 ">
         <div class="panel panel-historial table-responsive">

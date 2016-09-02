@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Finanzas Personales</title>
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/home.css">
@@ -36,7 +37,7 @@
           <li ><a href="historial.php">Historial / Edicion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon glyphicon-calendar"></span></a></li>
           <li ><a href="estadisticas.php">Estadisticas<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-stats"></span></a></li>
           <li ><a href="construccion.php">Ayuda<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-question-sign"></span></a></li>
-          <li ><a href="construccion.php">Configuracion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a></li>
+          <li ><a href="configuracion.php">Configuracion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a></li>
           <li ><a href="logout.php">Log Out<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-log-out"></span></a></li>
         </ul>
       </div>
