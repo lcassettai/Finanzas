@@ -2,7 +2,7 @@
 <div class="container">
   <div class="alert alert-info alert-dismissable" style='margin-top:2%;'>
     <button type="button" class='close' data-dismiss='alert'>&times;</button>
-    <strong>Info!</strong>Esta es una version beta y puede que surjan algunos errores, si queres ayudar a mejorar la pagina podes enviar un correo a <strong>luciano.cassettai@gmail.com</strong> contando que hiciste antes de ocurriera el error. Muchas gracias!
+    <strong>Nueva Actualizacion!</strong> ahora vas a poder cambiar tu informacion de usuario.
   </div>
   <div class="jumbotron text-center jumbo-home ">
     <h1 >Bienvenido <strong><?php echo $_SESSION['usuario'];?></strong></h1>
