@@ -41,12 +41,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
      $email = filter_var($email, FILTER_VALIDATE_EMAIL);
      $pass = hash('sha512',$pass);
 
-     $statement = $conexion->prepare('SELECT * FROM usuarios WHERE usuario = :usuario LIMIT 1');
-     $statement->execute(array(':usuario' => $usuario));
+     $statement = $conexion->prepare('SELECT * FROM usuarios WHERE usuario = :usuario OR email = :email LIMIT 1');
+     $statement->execute(array(
+       ':usuario' => $usuario,
+       ':email' => $email
+     ));
      $resultado = $statement->fetch();
 
+
       if($resultado != false){
-        $errores .= "<li>El nombre de usuario ya existe</li>";
+        $errores .= "<li>El usuario o email ya se encuentran registrados</li>";
       }else{
         //Si no se encontro ningun error se procede a insertar los datos
         $consulta = $conexion->prepare('INSERT INTO usuarios (id_usuario,usuario,pass,email,activo) VALUES (null,:usuario,:pass,:email,0)');
@@ -56,7 +60,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
           ':email' => $email
         ));
 
-         $enviado = true;         
+         $enviado = true;
       }
   }
 }

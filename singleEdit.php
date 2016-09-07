@@ -45,7 +45,7 @@
 
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(!empty($_POST['monto'])){
-      $monto =  $_POST['monto'];
+      $monto =  limpiarInput($_POST['monto']);
       if(!is_numeric($monto)){
           $errores = 'El monto debe ser numerico';
       }
