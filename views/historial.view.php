@@ -126,7 +126,7 @@
                             <strong>Categoria : </strong><span><?php echo $movimiento['tipo_ingreso']; ?></span>
                           </p>
                           <p>
-                            <strong>Comentario : </strong><span><?php echo $movimiento['comentario']; ?></span>
+                            <strong>Comentario : </strong><span style='word-wrap: break-word;'><?php echo $movimiento['comentario']; ?></span>
                           </p>
                         </div>
                         <div class="modal-footer">

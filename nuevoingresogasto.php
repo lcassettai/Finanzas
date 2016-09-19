@@ -32,16 +32,26 @@
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(!empty($_POST['monto'])){
       $monto =  limpiarInput($_POST['monto']);
+      $monto = round($monto,2);
       if(!is_numeric($monto)){
-          $errores = 'El monto debe ser numerico';
+          $errores .= '<li>El monto debe ser numerico</li>';
+      }
+      if($monto > 999999){
+          $errores .= '<li>El monto no puede ser mayor a $999.999</li>';
+      }
+      if($monto < 0){
+          $errores .= '<li>El monto no puede ser negativo</li>';
       }
     }else{
-      $errores = 'Debe ingresar un monto';
+      $errores = '<li>Debe ingresar un monto</li>';
     }
 
     if(!empty($_POST['comentario'])){
       $comentario = $_POST['comentario'];
       $comentario = limpiarInput($comentario);
+      if(strlen($comentario) > 130){
+        $errores .= '<li>El comentario no puede ser mayor a 130 caracteres</li>';
+      }
     }else{
       $comentario  = '';
     }
@@ -49,10 +59,10 @@
     if(!empty($_POST['categoria'])){
         $categoria = $_POST['categoria'];
         if (!is_numeric($categoria)) {
-          $errores = 'La categoria no es correcta';
+          $errores .= '<li>La categoria no es correcta</li>';
         }
     }else{
-      $errores = 'Debe seleccionar una categoria';
+      $errores .= '<li>Debe seleccionar una categoria</li>';
     }
 
     $usuario = $_SESSION['id'];

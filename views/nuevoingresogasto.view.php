@@ -36,9 +36,10 @@
               </select>
             <?php endif; ?>
           </div>
-          <div class="form-group">
+          <div class="form-group clearfix">
             <label for="comentario">Comentario :</label>
             <textarea name="comentario" class='form-control' placeholder="Comentario" id='comentario' rows="6"></textarea>
+            <p class='pull-right text-success' id='contador'>0/130</p>
           </div>
 
           <!-- En caso de tener errores los muestra -->
@@ -96,6 +97,33 @@
     //Al hacer click en submit mostrar el gif de carga
     $("input[name='submit']").click(function(){
       $(loading).css('display','block');
+    });
+
+    //Muestra un contador para que no supere las 130 palabra
+    $('#comentario').keydown(function(){
+      var cont = $('#comentario').val().length;
+
+      var key = event.keyCode || event.charCode;
+      if( key == 8 || key == 46 ){
+        if(cont > 0){
+          cont--;
+        }
+      }else{
+        cont++;
+      }
+
+      if(cont < 130){
+        $('#contador').text(cont+ '/130');
+        if($('#contador').hasClass('text-danger')){
+          $('#contador').removeClass('text-danger');
+          $('#contador').addClass('text-success');
+        }
+      }else{
+        $('#contador').text(cont+ '/130');
+        $('#contador').removeClass('text-success');
+        $('#contador').addClass('text-danger');
+      }
+
     });
   });
 </script>

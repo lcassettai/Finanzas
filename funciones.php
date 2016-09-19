@@ -49,7 +49,7 @@
       $montoActual -= $resultado['monto'];
     }
 
-    return $montoActual;
+    return round($montoActual,2);
   }
 
   function obtener_tipo_ingresos_gastos($conexion,$ingreso_gasto){
