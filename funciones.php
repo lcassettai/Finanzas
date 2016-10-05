@@ -18,7 +18,7 @@
 
   function verificarSesion(){
     if(!isset($_SESSION['usuario'])){
-      header('Location:'.RUTA.'/login.php');
+      header('Location:login.php');
     }
   }
 
@@ -53,7 +53,7 @@
   }
 
   function obtener_tipo_ingresos_gastos($conexion,$ingreso_gasto){
-    $consulta = $conexion->prepare('SELECT * FROM tipo_'.$ingreso_gasto);
+    $consulta = $conexion->prepare('SELECT * FROM tipo_'.$ingreso_gasto .' ORDER BY 2');
     $consulta->execute();
     $resultado = $consulta->fetchAll();
     return $resultado;

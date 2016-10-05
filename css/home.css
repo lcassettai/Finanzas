@@ -414,3 +414,11 @@ body.loading .modal {
 .info-usuario-invisible{
   display: none;
 }
+
+.panel-filtro-historial{
+    background: #fff;
+    border-top: 4px solid #ffc107;
+    padding: 10px 10px 0 10px;
+    box-shadow: 0px 0px 1px 1px rgba(171, 171, 171, 0.81);
+
+}

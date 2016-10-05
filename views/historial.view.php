@@ -1,9 +1,41 @@
 <?php  require 'headlayout.view.php';?>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
 
   <div class="container">
     <h1 class='text-center gfont'>Historial</h1>
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2 ">
+        <!--FILTRO-->
+        <a href="#filtro" class="btn btn-primary" style='margin:10px 0px;' data-toggle="collapse"><span class='glyphicon glyphicon-filter'></span> Filtrar Busqueda</a>
+        <div id="filtro" class="collapse panel panel-filtro-historial">
+          <form class="form" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
+            <div class="form-group">
+              <label for="desde">Desde :</label>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1"><span class='glyphicon glyphicon-calendar'></span></span>
+                <input id='datedesde' type="text" class="form-control" placeholder="DD/MM/AAAA" name='fechadesde' aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="hhasta">Hasta :</label>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1"><span class='glyphicon glyphicon-calendar'></span></span>
+                <input  id="datehasta" type="text" class="form-control" placeholder="DD/MM/AAAA" name='fechahasta' aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="form-group clearfix">
+              <input type="submit" name="submit" value="Filtrar" class='btn btn-success pull-right'>
+            </div>
+          </form>
+        </div>
+
+        <?php if ($errores != ''): ?>
+          <div class="alert alert-danger fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>Error!</strong><ul> <?php echo $errores; ?></ul>
+          </div>
+        <?php endif; ?>
+
         <div class="panel panel-historial table-responsive">
           <table class='table table-striped table-hover'>
             <thead>
@@ -141,9 +173,12 @@
             </tbody>
           </table>
         </div>
+
+
       </div>
     </div>
   </div>
+
 
 
 <!--PAGINACION -->
@@ -178,3 +213,12 @@
 
 
 <?php  require 'bottomlayout.view.php';?>
+
+<script type="text/javascript">
+  $( function() {
+    $( "#datedesde" ).datepicker();
+    $( "#datehasta" ).datepicker();
+  });
+</script>
+
+<script src="javascript/jqueryUI.js"></script>

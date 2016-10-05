@@ -38,8 +38,8 @@
           </div>
           <div class="form-group clearfix">
             <label for="comentario">Comentario :</label>
-            <textarea name="comentario" class='form-control' placeholder="Comentario" id='comentario' rows="6"></textarea>
-            <p class='pull-right text-success' id='contador'>0/130</p>
+            <textarea name="comentario" class='form-control' placeholder="Comentario" id='comentario' rows="6" pattern="[a-zA-Z0-9]"></textarea>
+            <p class='pull-right text-success' id='contador'></p>
           </div>
 
           <!-- En caso de tener errores los muestra -->
@@ -84,6 +84,27 @@
 
 <?php require 'bottomlayout.view.php'; ?>
 <script type="text/javascript">
+
+//Funcion para limitar caracteres
+(function($) {
+	$.fn.extend( {
+		limiter: function(limit, elem) {
+			$(this).on("keyup focus", function() {
+				setCount(this, elem);
+			});
+			function setCount(src, elem) {
+				var chars = src.value.length;
+				if (chars > limit) {
+					src.value = src.value.substr(0, limit);
+					chars = limit;
+				}
+				elem.html(chars + "/130");
+			}
+			setCount($(this)[0], elem);
+		}
+	});
+})(jQuery);
+
   $('document').ready(function(){
     //Si todos los campos son correctos mostrar modal avisando al usuario
     <?php if($enviado == true):?>
@@ -100,30 +121,8 @@
     });
 
     //Muestra un contador para que no supere las 130 palabra
-    $('#comentario').keydown(function(){
-      var cont = $('#comentario').val().length;
+    var contador = $("#contador");
+    $("#comentario").limiter(130, contador);
 
-      var key = event.keyCode || event.charCode;
-      if( key == 8 || key == 46 ){
-        if(cont > 0){
-          cont--;
-        }
-      }else{
-        cont++;
-      }
-
-      if(cont < 130){
-        $('#contador').text(cont+ '/130');
-        if($('#contador').hasClass('text-danger')){
-          $('#contador').removeClass('text-danger');
-          $('#contador').addClass('text-success');
-        }
-      }else{
-        $('#contador').text(cont+ '/130');
-        $('#contador').removeClass('text-success');
-        $('#contador').addClass('text-danger');
-      }
-
-    });
   });
 </script>

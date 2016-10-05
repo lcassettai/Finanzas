@@ -41,7 +41,7 @@ function drawChart() {
 
   var opcionesTipoGastos = {
       title: 'Gastos del mes en curso',
-      is3D: true
+      pieHole: 0.3
     };
 
   /*Apartir de los datos obtenidos de la BD y con el JSON que regreso la

@@ -18,6 +18,7 @@ $consulta = $conexion->prepare('SELECT sum(monto) AS monto,tipo_gasto as tipo,mo
 FROM gastos g INNER JOIN tipo_gastos tg ON g.id_tipo_gasto = tg.id_tipo_gasto
 WHERE id_usuario = :id AND month(fecha) = month(curdate()) AND year(curdate()) = year(fecha)
 GROUP BY tipo_gasto,month(fecha),year(fecha)
+ORDER BY 1 desc
 ');
 $consulta->execute(array(
   ':id' => $id
