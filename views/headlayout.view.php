@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/home.css">
+  <link type="image/x-icon" href="image/icono.ico" rel="shortcut icon" />
+  <link type="image/x-icon" href="image/icono.ico" rel="icon" />
 </head>
 <body>
   <nav class="navbar navbar-default sidebar" role="navigation">
